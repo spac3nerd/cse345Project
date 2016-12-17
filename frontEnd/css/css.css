@@ -1,0 +1,169 @@
+ 
+.header {
+	font-family: "Old Standard TT", serif;
+	width: 100%;
+	position: relative;
+}
+
+.content {
+	font-family: "Old Standard TT", serif;
+	background: White ;
+	width: 100%;
+/* 	height: calc(100% - 50px); */
+	position: relative;
+}
+
+.pageContainer {
+	position: absolute;
+	width: 100%;
+	transform-style: preserve-3d;
+}
+
+.loginContainer {
+/* 	left: 50%; */
+/* 	transform: translate(-50%, 0); */
+}
+
+.button {
+	width: 75px;
+	height: 50px;
+}
+
+.signup {
+	background-color: #20bbde;
+}
+
+.wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.login {
+	width: 500px;
+	top: 100px;
+	position: relative;
+	height: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #55edd6;
+}
+	
+	
+	
+.loginRow {
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-top: 10px;
+}
+
+.loginRow input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #333;
+	font-size: 16px;
+	color: #636e76;
+}
+
+.btnLogin {
+	background: #333;
+	color: #ffffff !important;
+	cursor: pointer;
+}
+
+.title {
+	width: 100%;
+	text-align: center;
+	padding: 8px;
+	font-size: 30px;
+}
+
+.centered {
+	text-align: center;
+}
+
+.homeContent {
+	text-align: center;
+	overflow: hidden;
+}
+
+.homeImage{
+	padding-right: 20px;
+	margin-top:10px;
+	float:right;
+	width:50%;
+	height:50%
+	
+}
+
+.paragraphOne{
+	float:left;
+	text-align:Center;
+	width:40%;
+	height:40%;
+	font-size: 250%;
+}
+
+.paragraphTwo{
+	float:left;
+	text-align:left;
+	width:40%;
+	height:40%;
+	font-size: 200%;
+	padding-left: 20px;
+}
+
+
+div {
+	box-sizing: border-box;
+}
+
+input {
+	box-sizing: border-box;
+}
+
+.headerUl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.headerList {
+    margin: 5px;
+    float: left;
+}
+
+.headerListSelect {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.headerListSelect:hover {
+    background-color: #111;
+}
+
+/* Images used for expanding/collapsing table rows */
+td.details-control {
+    background: url('images/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('images/details_close.png') no-repeat center center;
+}
+td.remove-appt {
+    background: url('images/details_close.png') no-repeat center center;
+    cursor: pointer;
+}
+
+.outZIndex {
+	z-index: 1;
+}
+.inZIndex {
+	z-index: 2;
+}
+

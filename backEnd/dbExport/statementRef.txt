@@ -1,0 +1,33 @@
+
+#Inserting a new vehicle make and model into the Vehicle table
+INSERT INTO Vehicles (VehicleMake, VehicleModel) VALUES('Chevrolet', 'Cobalt')
+
+#Insert a new Service
+INSERT INTO Services (Service) VALUES('Wheel alignment')
+
+#Map a user to a vehicle in the CustomerVehicles table
+INSERT INTO CustomerVehicles (CustID, VehicleID) VALUES (43, 1)
+
+INSERT INTO CustomerVehicles (CustID, VehicleID) Values (SELECT CustID FROM Customer WHERE CustEmail = 'sfbadila@oakland.edu', SELECT VehicleID FROM Vehicles WHERE VehicleMake = 'Chevrolet' AND VehicleModel = 'Cobalt')
+
+
+#Select all services for a make and model
+SELECT Service FROM Services WHERE ServiceID IN (SELECT SRID FROM ServiceRecommendation WHERE VehicleID = (SELECT VehicleID FROM Vehicles WHERE VehicleMake = make AND VehicleModel = model))
+
+
+#Removing unique constraint on column:
+ALTER TABLE tableName DROP INDEX column
+
+#Add unique constraint
+ALTER TABLE tableName ADD UNIQUE `unique_index`(col1, col2);
+
+ INSERT IGNORE CustomerVehicles (CustID, VehicleID) VALUES ((SELECT CustID FROM Customer WHERE CustEmail = "sfbadila@oakland.edu"),(SELECT VehicleID from Vehicles WHERE VehicleMake = "Audi" AND VehicleModel = "A5"));
+
+ #Add a technician with all time slots avaliable
+INSERT INTO Technician (`TechFirstName`,`TechLastName`,`D1`,`D2`,`D3`,`D4`,`D5`,`D6`,`D7`) VALUES ("John", "Doe", "00000000", "00000000", "00000000", "00000000", "00000000", "00000000", "00000000")
+
+
+SELECT * FROM CustomerVehicles JOIN (SELECT * FROM Appointment WHERE CustVehicleID IN (SELECT CustVehicleID FROM CustomerVehicles WHERE CustID = (SELECT CustID FROM Customer WHERE CustEmail = "sfbadila@oakland.edu"))) as t1 ON CustomerVehicles.CustVehicleID = t1.CustVehicleID
+
+
+SELECT * FROM Vehicles JOIN (SELECT CustVehicleID, CustID, VehicleID as temp2, TechID, ApptTime FROM CustomerVehicles JOIN (SELECT CustVehicleID as temp, TechID, ApptTime FROM Appointment WHERE CustVehicleID IN (SELECT CustVehicleID FROM CustomerVehicles WHERE CustID = (SELECT CustID FROM Customer WHERE CustEmail = "sfbadila@oakland.edu"))) as t1 ON CustomerVehicles.CustVehicleID = t1.temp) AS t2 ON Vehicles.VehicleID = t2.temp2

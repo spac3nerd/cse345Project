@@ -1,0 +1,36 @@
+<script id="appointmentTemplate" type="text/template" class="template">
+
+<div id="appointmentTemplateContainer">
+	<table cellpadding='5' cellspacing='0' border='0' style='padding-left:50px;'>
+		<tr>
+			<td>Service:</td>
+			<td> {{rc.service}} </td>
+		</tr>
+		
+		<tr>
+			<td>Schedule an Appointment</td>
+		</tr>
+		
+		<tr>
+			<td><label for="selectTechnician">Select a Technician</label></td>
+			<td><select name="selectTechnician" id="selectTechnician"></select></td>
+		</tr>
+		
+		<tr>
+			<td>Date:</td> 
+			<td><input type="text" id="appointmentDatePicker"></td>
+		</tr>
+		
+		<tr>
+			<td>Time:</td>
+			<td><input id="selectTime" type="text" class="time" /></td>
+		</tr>
+		
+		<tr>
+			<td>Confirm Appointment</td>
+			<td><input id="submitAppointment" type="button" value="Confirm"/></td>
+		</tr>
+	</table>
+</div>
+
+</script>

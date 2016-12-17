@@ -1,0 +1,11 @@
+{
+	"name": "345",
+	"version": "0.0.1",
+	"private": true,
+	"devDependencies": {
+		"httpdispatcher": "~1.0.0",
+		"mariasql": "~0.2.6",
+		"bcrypt": "~0.8.7",
+		"nodemailer": "~2.3"
+	}
+}
